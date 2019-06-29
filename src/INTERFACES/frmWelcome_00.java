@@ -60,7 +60,7 @@ public class frmWelcome_00 extends javax.swing.JFrame {
         jLabel3.setFont(new java.awt.Font("Lucida Sans Unicode", 0, 12)); // NOI18N
         jLabel3.setText("Contraseña:");
         getContentPane().add(jLabel3);
-        jLabel3.setBounds(270, 350, 69, 20);
+        jLabel3.setBounds(270, 340, 69, 20);
 
         btnSalir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconos/Util/LINEAS LITE/EQUIS CIRCULO.png"))); // NOI18N
         btnSalir.setBorder(null);
@@ -95,7 +95,7 @@ public class frmWelcome_00 extends javax.swing.JFrame {
             }
         });
         getContentPane().add(btnIniciarSesion);
-        btnIniciarSesion.setBounds(270, 440, 255, 28);
+        btnIniciarSesion.setBounds(270, 410, 250, 28);
 
         txt_Usuario.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         txt_Usuario.setBorder(null);
@@ -107,13 +107,13 @@ public class frmWelcome_00 extends javax.swing.JFrame {
             }
         });
         getContentPane().add(txt_Usuario);
-        txt_Usuario.setBounds(270, 290, 255, 40);
+        txt_Usuario.setBounds(270, 290, 250, 30);
 
         txt_Contraseña.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         txt_Contraseña.setBorder(null);
         txt_Contraseña.setOpaque(false);
         getContentPane().add(txt_Contraseña);
-        txt_Contraseña.setBounds(270, 370, 260, 40);
+        txt_Contraseña.setBounds(270, 360, 250, 30);
 
         jLabel1.setFont(new java.awt.Font("Lucida Sans Unicode", 0, 12)); // NOI18N
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Fondos/welcomeSesion.png"))); // NOI18N
