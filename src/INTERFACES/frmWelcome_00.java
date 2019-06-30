@@ -6,8 +6,11 @@
 package INTERFACES;
 
 import botones.TextoPorDefecto;
+import com.sun.awt.AWTUtilities;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JOptionPane;
-
+import rojeru_san.RSPanelsSlider;
 
 /**
  *
@@ -23,8 +26,10 @@ public class frmWelcome_00 extends javax.swing.JFrame {
         this.setLocationRelativeTo(null);
         this.setResizable(false);
         TextoPorDefecto defecto;
-        new TextoPorDefecto("   alexb1234", txt_Usuario);
-        new TextoPorDefecto("   contraseña", txt_Contraseña);
+        new TextoPorDefecto("   alexb1234", txt_Usuario1);
+        new TextoPorDefecto("   contraseña", txt_Contraseña1);
+        AWTUtilities.setWindowOpaque(this, false);
+
     }
 
     /**
@@ -36,13 +41,24 @@ public class frmWelcome_00 extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel2 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
-        btnSalir = new javax.swing.JButton();
+        rSProgressCircleAnimated1 = new rojerusan.componentes.RSProgressCircleAnimated();
+        rSPanelsSlider1 = new rojeru_san.RSPanelsSlider();
+        panel1 = new javax.swing.JPanel();
+        jLabel4 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
+        btnRegistrarteW = new javax.swing.JButton();
+        txt_Usuario1 = new javax.swing.JTextField();
+        txt_Contraseña1 = new javax.swing.JPasswordField();
+        lblMensajemalescrito = new javax.swing.JLabel();
         btnIniciarSesion = new javax.swing.JButton();
-        txt_Usuario = new javax.swing.JTextField();
-        txt_Contraseña = new javax.swing.JPasswordField();
+        panel2 = new javax.swing.JPanel();
+        btnSalir = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
+
+        rSProgressCircleAnimated1.setForeground(new java.awt.Color(136, 18, 51));
+        rSProgressCircleAnimated1.setToolTipText("");
+        rSProgressCircleAnimated1.setColorText(new java.awt.Color(242, 115, 76));
+        rSProgressCircleAnimated1.setFont(new java.awt.Font("SimSun-ExtB", 0, 14)); // NOI18N
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setExtendedState(2);
@@ -52,28 +68,75 @@ public class frmWelcome_00 extends javax.swing.JFrame {
         setUndecorated(true);
         getContentPane().setLayout(null);
 
-        jLabel2.setFont(new java.awt.Font("Lucida Sans Unicode", 0, 12)); // NOI18N
-        jLabel2.setText("Usuario:");
-        getContentPane().add(jLabel2);
-        jLabel2.setBounds(270, 270, 47, 20);
+        rSPanelsSlider1.setOpaque(false);
+        rSPanelsSlider1.setLayout(null);
 
-        jLabel3.setFont(new java.awt.Font("Lucida Sans Unicode", 0, 12)); // NOI18N
-        jLabel3.setText("Contraseña:");
-        getContentPane().add(jLabel3);
-        jLabel3.setBounds(270, 340, 69, 20);
+        panel1.setBackground(new java.awt.Color(255, 255, 255));
+        panel1.setOpaque(false);
+        panel1.setLayout(null);
 
-        btnSalir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconos/Util/LINEAS LITE/EQUIS CIRCULO.png"))); // NOI18N
-        btnSalir.setBorder(null);
-        btnSalir.setBorderPainted(false);
-        btnSalir.setContentAreaFilled(false);
-        btnSalir.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        btnSalir.addActionListener(new java.awt.event.ActionListener() {
+        jLabel4.setFont(new java.awt.Font("Lucida Sans Unicode", 0, 12)); // NOI18N
+        jLabel4.setText("Usuario:");
+        panel1.add(jLabel4);
+        jLabel4.setBounds(20, 80, 47, 20);
+
+        jLabel5.setFont(new java.awt.Font("Lucida Sans Unicode", 0, 12)); // NOI18N
+        jLabel5.setText("Contraseña:");
+        panel1.add(jLabel5);
+        jLabel5.setBounds(20, 150, 69, 20);
+
+        btnRegistrarteW.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
+        btnRegistrarteW.setForeground(new java.awt.Color(255, 255, 255));
+        btnRegistrarteW.setIcon(new javax.swing.ImageIcon(getClass().getResource("/botones/registrar1W.png"))); // NOI18N
+        btnRegistrarteW.setMnemonic('A');
+        btnRegistrarteW.setBorder(null);
+        btnRegistrarteW.setBorderPainted(false);
+        btnRegistrarteW.setContentAreaFilled(false);
+        btnRegistrarteW.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnRegistrarteW.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        btnRegistrarteW.setIconTextGap(-26);
+        btnRegistrarteW.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/botones/registrar1W.png"))); // NOI18N
+        btnRegistrarteW.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/botones/registrar2W.png"))); // NOI18N
+        btnRegistrarteW.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
+        btnRegistrarteW.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        btnRegistrarteW.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnSalirActionPerformed(evt);
+                btnRegistrarteWActionPerformed(evt);
             }
         });
-        getContentPane().add(btnSalir);
-        btnSalir.setBounds(520, 80, 32, 32);
+        panel1.add(btnRegistrarteW);
+        btnRegistrarteW.setBounds(20, 270, 250, 28);
+
+        txt_Usuario1.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        txt_Usuario1.setBorder(null);
+        txt_Usuario1.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
+        txt_Usuario1.setOpaque(false);
+        txt_Usuario1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txt_Usuario1ActionPerformed(evt);
+            }
+        });
+        panel1.add(txt_Usuario1);
+        txt_Usuario1.setBounds(20, 100, 250, 30);
+
+        txt_Contraseña1.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        txt_Contraseña1.setBorder(null);
+        txt_Contraseña1.setOpaque(false);
+        txt_Contraseña1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txt_Contraseña1ActionPerformed(evt);
+            }
+        });
+        panel1.add(txt_Contraseña1);
+        txt_Contraseña1.setBounds(20, 170, 250, 30);
+
+        lblMensajemalescrito.setForeground(new java.awt.Color(77, 5, 46));
+        lblMensajemalescrito.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblMensajemalescrito.setText(".");
+        lblMensajemalescrito.setToolTipText("");
+        lblMensajemalescrito.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        panel1.add(lblMensajemalescrito);
+        lblMensajemalescrito.setBounds(20, 250, 250, 16);
 
         btnIniciarSesion.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
         btnIniciarSesion.setForeground(new java.awt.Color(255, 255, 255));
@@ -94,28 +157,35 @@ public class frmWelcome_00 extends javax.swing.JFrame {
                 btnIniciarSesionActionPerformed(evt);
             }
         });
-        getContentPane().add(btnIniciarSesion);
-        btnIniciarSesion.setBounds(270, 410, 250, 28);
+        panel1.add(btnIniciarSesion);
+        btnIniciarSesion.setBounds(20, 220, 250, 28);
 
-        txt_Usuario.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        txt_Usuario.setBorder(null);
-        txt_Usuario.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
-        txt_Usuario.setOpaque(false);
-        txt_Usuario.addActionListener(new java.awt.event.ActionListener() {
+        rSPanelsSlider1.add(panel1);
+        panel1.setBounds(30, 70, 290, 380);
+
+        panel2.setOpaque(false);
+        panel2.setLayout(null);
+        rSPanelsSlider1.add(panel2);
+        panel2.setBounds(60, 30, 200, 280);
+
+        getContentPane().add(rSPanelsSlider1);
+        rSPanelsSlider1.setBounds(220, 70, 320, 420);
+
+        btnSalir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconos/Util/LINEAS LITE/EQUIS CIRCULO.png"))); // NOI18N
+        btnSalir.setBorder(null);
+        btnSalir.setBorderPainted(false);
+        btnSalir.setContentAreaFilled(false);
+        btnSalir.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnSalir.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txt_UsuarioActionPerformed(evt);
+                btnSalirActionPerformed(evt);
             }
         });
-        getContentPane().add(txt_Usuario);
-        txt_Usuario.setBounds(270, 290, 250, 30);
-
-        txt_Contraseña.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        txt_Contraseña.setBorder(null);
-        txt_Contraseña.setOpaque(false);
-        getContentPane().add(txt_Contraseña);
-        txt_Contraseña.setBounds(270, 360, 250, 30);
+        getContentPane().add(btnSalir);
+        btnSalir.setBounds(530, 70, 32, 32);
 
         jLabel1.setFont(new java.awt.Font("Lucida Sans Unicode", 0, 12)); // NOI18N
+        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Fondos/welcomeSesion.png"))); // NOI18N
         getContentPane().add(jLabel1);
         jLabel1.setBounds(0, 0, 800, 550);
@@ -126,18 +196,65 @@ public class frmWelcome_00 extends javax.swing.JFrame {
     private void btnSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalirActionPerformed
         //Cerrar
         int dialog = JOptionPane.YES_NO_OPTION;
-        int resultado= JOptionPane.showConfirmDialog(this, "¿Desea salir?","Salir",dialog);
-        if (resultado==0)
-        System.exit(0);
+        int resultado = JOptionPane.showConfirmDialog(this, "¿Desea salir?", "Salir", dialog);
+        if (resultado == 0) {
+            System.exit(0);
+        }
     }//GEN-LAST:event_btnSalirActionPerformed
 
+    private void txt_Usuario1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt_Usuario1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txt_Usuario1ActionPerformed
+
+    private void btnRegistrarteWActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegistrarteWActionPerformed
+        dispose();
+        frmregistrodelCliente01 Traer = new frmregistrodelCliente01();
+        Traer.setVisible(true);
+    }//GEN-LAST:event_btnRegistrarteWActionPerformed
+
+    private void txt_Contraseña1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt_Contraseña1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txt_Contraseña1ActionPerformed
+boolean bandera=false;
+int c1=0;
     private void btnIniciarSesionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnIniciarSesionActionPerformed
+        //ccccccccccccccc  lblMensajemalescrito.setText(txt_Usuario1.getText());
 
+        lblMensajemalescrito.setText("Ingrese su usuario y contraseña ");
+        if (txt_Usuario1.getText().isEmpty() || txt_Contraseña1.getText().isEmpty()) {
+            lblMensajemalescrito.setText("Ingrese su usuario y contraseña ");
+        } else {
+
+            if (txt_Usuario1.getText().equals("alex") && txt_Contraseña1.getText().equals("contra")) {
+                dispose();
+                frmMenuPrincipal011 Traer = new frmMenuPrincipal011();
+                Traer.setVisible(true);
+//                rSPanelsSlider1.setPanelSlider(1, panel2, RSPanelsSlider.DIRECT.RIGHT);
+//                
+//                new Thread(new Runnable() {
+//                    @Override
+//                    public void run() {
+//                        try {
+//                            Thread.sleep(200); //dormir, cerrar y abrir
+//                            dispose();
+//                            frmMenuPrincipal011 Traer = new frmMenuPrincipal011();
+//                             Traer.setVisible(true);
+//                        } catch (InterruptedException ex) {
+//                            Logger.getLogger(frmporlasdudas.class.getName()).log(Level.SEVERE, null, ex);
+//                        }
+//                    }
+//                }).start();
+
+            } else { c1=c1+1;
+if (c1==1) lblMensajemalescrito.setText("Usuario o contraseña incorrecta");
+if (c1==3||c1==4)  lblMensajemalescrito.setText("Tal vez no tiene una cuenta, registese");    
+          // System.out.println(c1); 
+                        if (c1==5) c1=1;
+            
+            }
+
+        }
     }//GEN-LAST:event_btnIniciarSesionActionPerformed
-
-    private void txt_UsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt_UsuarioActionPerformed
-        //username
-    }//GEN-LAST:event_txt_UsuarioActionPerformed
 
     /**
      * @param args the command line arguments
@@ -177,11 +294,17 @@ public class frmWelcome_00 extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnIniciarSesion;
+    private javax.swing.JButton btnRegistrarteW;
     private javax.swing.JButton btnSalir;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JPasswordField txt_Contraseña;
-    private javax.swing.JTextField txt_Usuario;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel lblMensajemalescrito;
+    private javax.swing.JPanel panel1;
+    private javax.swing.JPanel panel2;
+    private rojeru_san.RSPanelsSlider rSPanelsSlider1;
+    private rojerusan.componentes.RSProgressCircleAnimated rSProgressCircleAnimated1;
+    private javax.swing.JPasswordField txt_Contraseña1;
+    private javax.swing.JTextField txt_Usuario1;
     // End of variables declaration//GEN-END:variables
 }

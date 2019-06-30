@@ -72,6 +72,7 @@ public class frmMenuPrincipal01 extends javax.swing.JFrame {
         });
         popupsalir.add(itenvolver);
 
+        itensalir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconos/Util/LINEAS NEGRITAS/ARELANTE.png"))); // NOI18N
         itensalir.setText("         Salir");
         itensalir.setBorder(null);
         itensalir.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));

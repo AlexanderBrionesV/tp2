@@ -24,7 +24,7 @@ public class frmregistrodelCliente01 extends javax.swing.JFrame {
         TextoPorDefecto defecto;
         new TextoPorDefecto("   Nombre de usuario", txt_UsuarioNuevoRegistro);
         new TextoPorDefecto("   Alexander", txt_NomreUNuevoRegistro);
-        new TextoPorDefecto("   briones", txt_ApellidoUNuevoRegistro);
+        new TextoPorDefecto("   Briones", txt_ApellidoUNuevoRegistro);
         new TextoPorDefecto("   alexanderbvart@gmail.com", txt_CorreoUNuevoRegistro);
         new TextoPorDefecto("   999666969", txt_TelefonoUNuevoRegistro);
         new TextoPorDefecto("   Pacasmayo", txt_CiudadUNuevoRegistro);
@@ -246,7 +246,7 @@ public class frmregistrodelCliente01 extends javax.swing.JFrame {
         jfndo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Fondos/welcomeSesion.png"))); // NOI18N
         jfndo.setText("r");
         getContentPane().add(jfndo);
-        jfndo.setBounds(0, 0, 800, 540);
+        jfndo.setBounds(0, 0, 800, 550);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
