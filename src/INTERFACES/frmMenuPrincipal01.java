@@ -17,14 +17,25 @@ public class frmMenuPrincipal01 extends javax.swing.JFrame {
     /**
      * Creates new form frmWelcome
      */
+    frmWelcome_00 mensajeF = new frmWelcome_00();
     public frmMenuPrincipal01() {
         initComponents();
         this.setLocationRelativeTo(null);
         this.setResizable(false);
         //this.setExtendedState(6);
         TextoPorDefecto defecto;
-        new TextoPorDefecto("   username", txtuserName1);
-    }
+       
+        
+        }
+     public frmMenuPrincipal01(String user) {         
+         initComponents();
+        this.setLocationRelativeTo(null);
+        this.setResizable(false);
+        //this.setExtendedState(6);
+        TextoPorDefecto defecto;
+        
+        this.lbl_user.setText(user);
+     }
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -38,33 +49,34 @@ public class frmMenuPrincipal01 extends javax.swing.JFrame {
         popupsalir = new javax.swing.JPopupMenu();
         itenvolver = new javax.swing.JMenuItem();
         itensalir = new javax.swing.JMenuItem();
-        popupbuscar = new javax.swing.JPopupMenu();
-        jMenuItem1 = new javax.swing.JMenuItem();
-        jMenuItem2 = new javax.swing.JMenuItem();
-        jMenuItem3 = new javax.swing.JMenuItem();
-        popupRegistrar = new javax.swing.JPopupMenu();
-        jMenuItem4 = new javax.swing.JMenuItem();
-        jMenuItem5 = new javax.swing.JMenuItem();
-        jMenuItem6 = new javax.swing.JMenuItem();
-        popupListar = new javax.swing.JPopupMenu();
-        jLabel4 = new javax.swing.JLabel();
+        popupMisOp = new javax.swing.JPopupMenu();
+        itenTranferencia = new javax.swing.JMenuItem();
+        itenPagos = new javax.swing.JMenuItem();
+        itenRetiro = new javax.swing.JMenuItem();
+        popupMisCuentas = new javax.swing.JPopupMenu();
+        ItenCuentaSoles = new javax.swing.JMenuItem();
+        itenCuentaDolares = new javax.swing.JMenuItem();
+        itenAllCuentas = new javax.swing.JMenuItem();
         menuflotantederecho = new javax.swing.JPanel();
-        txt_Usuario1 = new javax.swing.JTextField();
-        txtuserName1 = new javax.swing.JTextField();
-        jLabel7 = new javax.swing.JLabel();
-        menuflotanteRegistrar = new javax.swing.JPanel();
-        txt_Usuario3 = new javax.swing.JTextField();
-        jLabel8 = new javax.swing.JLabel();
-        menuflotanteBuscar = new javax.swing.JPanel();
-        txt_Usuario4 = new javax.swing.JTextField();
-        jLabel10 = new javax.swing.JLabel();
-        menuflotanteListar = new javax.swing.JPanel();
-        txt_Usuario5 = new javax.swing.JTextField();
-        jLabel9 = new javax.swing.JLabel();
+        lbl_user = new javax.swing.JLabel();
+        menuflotanteMisOp = new javax.swing.JPanel();
+        lblMisOperacionesIcono = new javax.swing.JLabel();
+        panelInicio = new javax.swing.JPanel();
+        lblInicioIcono = new javax.swing.JLabel();
+        panelCuentas = new javax.swing.JPanel();
+        lblMiCuentasIcono1 = new javax.swing.JLabel();
         fondo = new javax.swing.JLabel();
 
+        popupsalir.setBorderPainted(false);
+        popupsalir.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        popupsalir.setOpaque(false);
+
         itenvolver.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconos/Util/LINEAS NEGRITAS/ATRAS.png"))); // NOI18N
-        itenvolver.setText("Cerrar Sesión");
+        itenvolver.setText("Cerrar Sesión  ");
+        itenvolver.setBorder(null);
+        itenvolver.setBorderPainted(false);
+        itenvolver.setContentAreaFilled(false);
+        itenvolver.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         itenvolver.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 itenvolverActionPerformed(evt);
@@ -75,6 +87,8 @@ public class frmMenuPrincipal01 extends javax.swing.JFrame {
         itensalir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconos/Util/LINEAS NEGRITAS/ARELANTE.png"))); // NOI18N
         itensalir.setText("         Salir");
         itensalir.setBorder(null);
+        itensalir.setBorderPainted(false);
+        itensalir.setContentAreaFilled(false);
         itensalir.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         itensalir.setOpaque(false);
         itensalir.addActionListener(new java.awt.event.ActionListener() {
@@ -84,23 +98,48 @@ public class frmMenuPrincipal01 extends javax.swing.JFrame {
         });
         popupsalir.add(itensalir);
 
-        jMenuItem1.setText("jMenuItem1");
-        popupbuscar.add(jMenuItem1);
+        popupMisOp.setBorderPainted(false);
+        popupMisOp.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        popupMisOp.setOpaque(false);
 
-        jMenuItem2.setText("jMenuItem2");
-        popupbuscar.add(jMenuItem2);
+        itenTranferencia.setText("Transferencias");
+        popupMisOp.add(itenTranferencia);
 
-        jMenuItem3.setText("jMenuItem3");
-        popupbuscar.add(jMenuItem3);
+        itenPagos.setText("Pagos ");
+        itenPagos.setOpaque(false);
+        popupMisOp.add(itenPagos);
 
-        jMenuItem4.setText("jMenuItem4");
-        popupRegistrar.add(jMenuItem4);
+        itenRetiro.setText("Retiro");
+        popupMisOp.add(itenRetiro);
 
-        jMenuItem5.setText("jMenuItem5");
-        popupRegistrar.add(jMenuItem5);
+        popupMisCuentas.setBorderPainted(false);
+        popupMisCuentas.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        popupMisCuentas.setOpaque(false);
 
-        jMenuItem6.setText("jMenuItem6");
-        popupRegistrar.add(jMenuItem6);
+        ItenCuentaSoles.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconos/Util/LINEAS NEGRITAS/cerdoSoles.png"))); // NOI18N
+        ItenCuentaSoles.setText("Cuentas en Soles");
+        ItenCuentaSoles.setBorder(null);
+        ItenCuentaSoles.setBorderPainted(false);
+        ItenCuentaSoles.setContentAreaFilled(false);
+        ItenCuentaSoles.setOpaque(false);
+        ItenCuentaSoles.setVerifyInputWhenFocusTarget(false);
+        popupMisCuentas.add(ItenCuentaSoles);
+
+        itenCuentaDolares.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconos/Util/LINEAS NEGRITAS/cerdoDolar.png"))); // NOI18N
+        itenCuentaDolares.setText("Cuentas en Dolares  ");
+        itenCuentaDolares.setBorder(null);
+        itenCuentaDolares.setBorderPainted(false);
+        itenCuentaDolares.setContentAreaFilled(false);
+        itenCuentaDolares.setOpaque(false);
+        popupMisCuentas.add(itenCuentaDolares);
+
+        itenAllCuentas.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconos/Util/LINEAS NEGRITAS/cerdoSolo.png"))); // NOI18N
+        itenAllCuentas.setText("Todas las cuentas");
+        itenAllCuentas.setBorder(null);
+        itenAllCuentas.setBorderPainted(false);
+        itenAllCuentas.setContentAreaFilled(false);
+        itenAllCuentas.setOpaque(false);
+        popupMisCuentas.add(itenAllCuentas);
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setExtendedState(2);
@@ -109,100 +148,58 @@ public class frmMenuPrincipal01 extends javax.swing.JFrame {
         setUndecorated(true);
         getContentPane().setLayout(null);
 
-        jLabel4.setFont(new java.awt.Font("Lucida Sans Unicode", 0, 12)); // NOI18N
-        jLabel4.setText("Usuario:");
-        getContentPane().add(jLabel4);
-        jLabel4.setBounds(270, 290, 47, 20);
-
         menuflotantederecho.setComponentPopupMenu(popupsalir);
         menuflotantederecho.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         menuflotantederecho.setOpaque(false);
         menuflotantederecho.setLayout(null);
 
-        txt_Usuario1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txt_Usuario1ActionPerformed(evt);
-            }
-        });
-        menuflotantederecho.add(txt_Usuario1);
-        txt_Usuario1.setBounds(280, 320, 255, 24);
-
-        txtuserName1.setBorder(null);
-        txtuserName1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        txtuserName1.setSelectionColor(new java.awt.Color(255, 255, 255));
-        menuflotantederecho.add(txtuserName1);
-        txtuserName1.setBounds(10, 10, 110, 40);
-
-        jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconos/Util/LINEAS NEGRITAS/ID USUARIO.png"))); // NOI18N
-        jLabel7.setText("_");
-        menuflotantederecho.add(jLabel7);
-        jLabel7.setBounds(120, 0, 40, 50);
+        lbl_user.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconos/Util/LINEAS NEGRITAS/ID USUARIO.png"))); // NOI18N
+        lbl_user.setText("_");
+        menuflotantederecho.add(lbl_user);
+        lbl_user.setBounds(0, 10, 140, 50);
 
         getContentPane().add(menuflotantederecho);
         menuflotantederecho.setBounds(630, 0, 170, 60);
 
-        menuflotanteRegistrar.setComponentPopupMenu(popupbuscar);
-        menuflotanteRegistrar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        menuflotanteRegistrar.setOpaque(false);
-        menuflotanteRegistrar.setLayout(null);
+        menuflotanteMisOp.setComponentPopupMenu(popupMisOp);
+        menuflotanteMisOp.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        menuflotanteMisOp.setOpaque(false);
+        menuflotanteMisOp.setLayout(null);
 
-        txt_Usuario3.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txt_Usuario3ActionPerformed(evt);
-            }
-        });
-        menuflotanteRegistrar.add(txt_Usuario3);
-        txt_Usuario3.setBounds(280, 320, 255, 24);
+        lblMisOperacionesIcono.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconos/Util/LINEAS NEGRITAS/4544829 - business comerce delivery mastercard shop(1).png"))); // NOI18N
+        lblMisOperacionesIcono.setText("Mis Operaciones");
+        menuflotanteMisOp.add(lblMisOperacionesIcono);
+        lblMisOperacionesIcono.setBounds(10, 20, 150, 30);
 
-        jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconos/Util/LINEAS NEGRITAS/LAPIZ.png"))); // NOI18N
-        jLabel8.setText("Registrar");
-        menuflotanteRegistrar.add(jLabel8);
-        jLabel8.setBounds(10, 20, 110, 30);
+        getContentPane().add(menuflotanteMisOp);
+        menuflotanteMisOp.setBounds(450, 0, 160, 60);
 
-        getContentPane().add(menuflotanteRegistrar);
-        menuflotanteRegistrar.setBounds(310, 0, 130, 60);
+        panelInicio.setToolTipText("");
+        panelInicio.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        panelInicio.setOpaque(false);
+        panelInicio.setLayout(null);
 
-        menuflotanteBuscar.setComponentPopupMenu(popupbuscar);
-        menuflotanteBuscar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        menuflotanteBuscar.setOpaque(false);
-        menuflotanteBuscar.setLayout(null);
+        lblInicioIcono.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconos/Util/LINEAS NEGRITAS/CASITA.png"))); // NOI18N
+        lblInicioIcono.setText("Inicio");
+        panelInicio.add(lblInicioIcono);
+        lblInicioIcono.setBounds(0, 20, 70, 30);
 
-        txt_Usuario4.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txt_Usuario4ActionPerformed(evt);
-            }
-        });
-        menuflotanteBuscar.add(txt_Usuario4);
-        txt_Usuario4.setBounds(280, 320, 255, 24);
+        getContentPane().add(panelInicio);
+        panelInicio.setBounds(230, 0, 70, 60);
 
-        jLabel10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconos/Util/LINEAS NEGRITAS/LUPA.png"))); // NOI18N
-        jLabel10.setText("Buscar");
-        menuflotanteBuscar.add(jLabel10);
-        jLabel10.setBounds(20, 10, 110, 50);
+        panelCuentas.setToolTipText("");
+        panelCuentas.setComponentPopupMenu(popupMisCuentas);
+        panelCuentas.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        panelCuentas.setOpaque(false);
+        panelCuentas.setLayout(null);
 
-        getContentPane().add(menuflotanteBuscar);
-        menuflotanteBuscar.setBounds(450, 0, 130, 60);
+        lblMiCuentasIcono1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconos/Util/LINEAS NEGRITAS/cerdoSolo.png"))); // NOI18N
+        lblMiCuentasIcono1.setText("Mis Cuentas");
+        panelCuentas.add(lblMiCuentasIcono1);
+        lblMiCuentasIcono1.setBounds(0, 20, 106, 32);
 
-        menuflotanteListar.setComponentPopupMenu(popupbuscar);
-        menuflotanteListar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        menuflotanteListar.setOpaque(false);
-        menuflotanteListar.setLayout(null);
-
-        txt_Usuario5.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txt_Usuario5ActionPerformed(evt);
-            }
-        });
-        menuflotanteListar.add(txt_Usuario5);
-        txt_Usuario5.setBounds(280, 320, 255, 24);
-
-        jLabel9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconos/Util/LINEAS NEGRITAS/CARPETA CON PAPEL.png"))); // NOI18N
-        jLabel9.setText("Listar");
-        menuflotanteListar.add(jLabel9);
-        jLabel9.setBounds(10, 20, 110, 30);
-
-        getContentPane().add(menuflotanteListar);
-        menuflotanteListar.setBounds(170, 0, 130, 60);
+        getContentPane().add(panelCuentas);
+        panelCuentas.setBounds(330, 0, 110, 60);
 
         fondo.setFont(new java.awt.Font("Lucida Sans Unicode", 0, 12)); // NOI18N
         fondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Fondos/menu3.png"))); // NOI18N
@@ -229,22 +226,6 @@ public class frmMenuPrincipal01 extends javax.swing.JFrame {
         if (resultado==0)
         System.exit(0);
     }//GEN-LAST:event_itensalirActionPerformed
-
-    private void txt_Usuario1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt_Usuario1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txt_Usuario1ActionPerformed
-
-    private void txt_Usuario3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt_Usuario3ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txt_Usuario3ActionPerformed
-
-    private void txt_Usuario4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt_Usuario4ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txt_Usuario4ActionPerformed
-
-    private void txt_Usuario5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt_Usuario5ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txt_Usuario5ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -275,6 +256,18 @@ public class frmMenuPrincipal01 extends javax.swing.JFrame {
         //</editor-fold>
         //</editor-fold>
         //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
@@ -282,35 +275,28 @@ public class frmMenuPrincipal01 extends javax.swing.JFrame {
                 new frmMenuPrincipal01().setVisible(true);
             }
         });
-    }
+    } 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JMenuItem ItenCuentaSoles;
     private javax.swing.JLabel fondo;
+    private javax.swing.JMenuItem itenAllCuentas;
+    private javax.swing.JMenuItem itenCuentaDolares;
+    private javax.swing.JMenuItem itenPagos;
+    private javax.swing.JMenuItem itenRetiro;
+    private javax.swing.JMenuItem itenTranferencia;
     private javax.swing.JMenuItem itensalir;
     private javax.swing.JMenuItem itenvolver;
-    private javax.swing.JLabel jLabel10;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel7;
-    private javax.swing.JLabel jLabel8;
-    private javax.swing.JLabel jLabel9;
-    private javax.swing.JMenuItem jMenuItem1;
-    private javax.swing.JMenuItem jMenuItem2;
-    private javax.swing.JMenuItem jMenuItem3;
-    private javax.swing.JMenuItem jMenuItem4;
-    private javax.swing.JMenuItem jMenuItem5;
-    private javax.swing.JMenuItem jMenuItem6;
-    private javax.swing.JPanel menuflotanteBuscar;
-    private javax.swing.JPanel menuflotanteListar;
-    private javax.swing.JPanel menuflotanteRegistrar;
+    private javax.swing.JLabel lblInicioIcono;
+    private javax.swing.JLabel lblMiCuentasIcono1;
+    private javax.swing.JLabel lblMisOperacionesIcono;
+    private javax.swing.JLabel lbl_user;
+    private javax.swing.JPanel menuflotanteMisOp;
     private javax.swing.JPanel menuflotantederecho;
-    private javax.swing.JPopupMenu popupListar;
-    private javax.swing.JPopupMenu popupRegistrar;
-    private javax.swing.JPopupMenu popupbuscar;
+    private javax.swing.JPanel panelCuentas;
+    private javax.swing.JPanel panelInicio;
+    private javax.swing.JPopupMenu popupMisCuentas;
+    private javax.swing.JPopupMenu popupMisOp;
     private javax.swing.JPopupMenu popupsalir;
-    private javax.swing.JTextField txt_Usuario1;
-    private javax.swing.JTextField txt_Usuario3;
-    private javax.swing.JTextField txt_Usuario4;
-    private javax.swing.JTextField txt_Usuario5;
-    private javax.swing.JTextField txtuserName1;
     // End of variables declaration//GEN-END:variables
 }

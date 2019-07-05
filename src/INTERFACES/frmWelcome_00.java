@@ -23,12 +23,14 @@ public class frmWelcome_00 extends javax.swing.JFrame {
      */
     public frmWelcome_00() {
         initComponents();
-        this.setLocationRelativeTo(null);
+        //this.setLocationRelativeTo(null);
         this.setResizable(false);
         TextoPorDefecto defecto;
         new TextoPorDefecto("   alexb1234", txt_Usuario1);
         new TextoPorDefecto("   contraseña", txt_Contraseña1);
         AWTUtilities.setWindowOpaque(this, false);
+        btnRegistrarteW.setVisible(false);
+        
 
     }
 
@@ -215,19 +217,25 @@ public class frmWelcome_00 extends javax.swing.JFrame {
     private void txt_Contraseña1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt_Contraseña1ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txt_Contraseña1ActionPerformed
-boolean bandera=false;
-int c1=0;
+    //boolean bandera = false;
+    int c1 = 0;
     private void btnIniciarSesionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnIniciarSesionActionPerformed
         //ccccccccccccccc  lblMensajemalescrito.setText(txt_Usuario1.getText());
 
         lblMensajemalescrito.setText("Ingrese su usuario y contraseña ");
         if (txt_Usuario1.getText().isEmpty() || txt_Contraseña1.getText().isEmpty()) {
             lblMensajemalescrito.setText("Ingrese su usuario y contraseña ");
+            
         } else {
 
             if (txt_Usuario1.getText().equals("alex") && txt_Contraseña1.getText().equals("contra")) {
                 dispose();
-                frmMenuPrincipal011 Traer = new frmMenuPrincipal011();
+                String _cadena=txt_Usuario1.getText().toUpperCase();
+                String cadena =_cadena.substring(0,1)
+                        
+                        +txt_Usuario1.getText().substring(1,txt_Usuario1.getText().length());
+                
+                frmMenuPrincipal01 Traer = new frmMenuPrincipal01(cadena);
                 Traer.setVisible(true);
 //                rSPanelsSlider1.setPanelSlider(1, panel2, RSPanelsSlider.DIRECT.RIGHT);
 //                
@@ -237,7 +245,7 @@ int c1=0;
 //                        try {
 //                            Thread.sleep(200); //dormir, cerrar y abrir
 //                            dispose();
-//                            frmMenuPrincipal011 Traer = new frmMenuPrincipal011();
+//                            frmMenuPrincipal01 Traer = new frmMenuPrincipal01();
 //                             Traer.setVisible(true);
 //                        } catch (InterruptedException ex) {
 //                            Logger.getLogger(frmporlasdudas.class.getName()).log(Level.SEVERE, null, ex);
@@ -245,12 +253,22 @@ int c1=0;
 //                    }
 //                }).start();
 
-            } else { c1=c1+1;
-if (c1==1) lblMensajemalescrito.setText("Usuario o contraseña incorrecta");
-if (c1==3||c1==4)  lblMensajemalescrito.setText("Tal vez no tiene una cuenta, registese");    
-          // System.out.println(c1); 
-                        if (c1==5) c1=1;
-            
+            } else {
+                c1 = c1 + 1;
+                if (c1 == 1) {
+                   
+                    lblMensajemalescrito.setText("Usuario o contraseña incorrecta");
+                    btnRegistrarteW.setVisible(false);
+                }
+                if (c1 == 3 || c1 == 4) {
+                    lblMensajemalescrito.setText("Tal vez no tiene una cuenta, registese");
+                    btnRegistrarteW.setVisible(true);
+                }
+                // System.out.println(c1); 
+                if (c1 == 5) {
+                    c1 = 1;
+                }
+
             }
 
         }

@@ -6,7 +6,10 @@
 package INTERFACES;
 
 import botones.TextoPorDefecto;
+import java.net.URL;
+import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
+import org.jdesktop.swingx.autocomplete.AutoCompleteDecorator;
 
 /**
  *
@@ -14,22 +17,41 @@ import javax.swing.JOptionPane;
  */
 public class frmregistrodelCliente01 extends javax.swing.JFrame {
 
+    private URL url;
+    int pul = 1;
+    int pul2 = 1;
+    String messeleccionado;
+
     /**
      * Creates new form frmWelcome
      */
     public frmregistrodelCliente01() {
         initComponents();
+
         this.setLocationRelativeTo(null);
         this.setResizable(false);
+
+        llenarItenSucursales();
+        AutoCompleteDecorator.decorate(Cbox_Sucursal);
+        AutoCompleteDecorator.decorate(cbox_Anio);
+        AutoCompleteDecorator.decorate(Cbox_Mes);
+        AutoCompleteDecorator.decorate(cbox_Dia);
+        AutoCompleteDecorator.decorate(cbox_Empleado);
+        AutoCompleteDecorator.decorate(cbox_TipoMoneda);
+
         TextoPorDefecto defecto;
-        new TextoPorDefecto("   Nombre de usuario", txt_UsuarioNuevoRegistro);
-        new TextoPorDefecto("   Alexander", txt_NomreUNuevoRegistro);
-        new TextoPorDefecto("   Briones", txt_ApellidoUNuevoRegistro);
-        new TextoPorDefecto("   alexanderbvart@gmail.com", txt_CorreoUNuevoRegistro);
-        new TextoPorDefecto("   999666969", txt_TelefonoUNuevoRegistro);
-        new TextoPorDefecto("   Pacasmayo", txt_CiudadUNuevoRegistro);
-        new TextoPorDefecto("   Contraseña", txt_ContraseñaNurvoReg);
-        new TextoPorDefecto("   Verifique su contraseña", txt_ContraseñaNConfReg);
+
+        new TextoPorDefecto("   Alfonso Alexander", txt_ClienteNombre);
+        new TextoPorDefecto("   Briones", txt_ClienteApellidoPat);
+        new TextoPorDefecto("   Ventura", txt_ClienteApellidoMat);
+        new TextoPorDefecto("   alexanderbvart@gmail.com", txt_ClienteCorreo);
+        new TextoPorDefecto("   23789014", txt_ClienteDni);
+        new TextoPorDefecto("   999666969", txt_ClienteTelefono);
+        new TextoPorDefecto("   Pacasmayo", txt_ClienteCiudad);
+        new TextoPorDefecto("   Huascar 150", txt_ClienteDireccion);
+        new TextoPorDefecto("   Contraseña", txt_CuentaContraseña);
+        new TextoPorDefecto("   Verifique su contraseña", txt_CuentaContraseñaConfirmar);
+
     }
 
     /**
@@ -42,24 +64,40 @@ public class frmregistrodelCliente01 extends javax.swing.JFrame {
     private void initComponents() {
 
         fondo = new javax.swing.JLabel();
-        lbl_usuarioUser = new javax.swing.JLabel();
+        BtnGrupoSeeeeeeeeeeeexo = new javax.swing.ButtonGroup();
+        lbl_Ciudad = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
-        txt_ContraseñaNurvoReg = new javax.swing.JTextField();
-        txt_UsuarioNuevoRegistro = new javax.swing.JTextField();
+        txt_CuentaContraseña = new javax.swing.JTextField();
+        txt_ClienteCiudad = new javax.swing.JTextField();
         btnActualizar = new javax.swing.JButton();
         jLabel4 = new javax.swing.JLabel();
-        txt_ContraseñaNConfReg = new javax.swing.JTextField();
+        txt_CuentaContraseñaConfirmar = new javax.swing.JTextField();
         lbl_nombre_usuario = new javax.swing.JLabel();
-        txt_NomreUNuevoRegistro = new javax.swing.JTextField();
+        txt_ClienteNombre = new javax.swing.JTextField();
         lb_lApelldos_usuarios = new javax.swing.JLabel();
-        txt_ApellidoUNuevoRegistro = new javax.swing.JTextField();
+        txt_ClienteApellidoMat = new javax.swing.JTextField();
         lbl_usuarioUser1 = new javax.swing.JLabel();
-        txt_CorreoUNuevoRegistro = new javax.swing.JTextField();
+        txt_ClienteCorreo = new javax.swing.JTextField();
         lbl_nombre_usuario1 = new javax.swing.JLabel();
-        txt_TelefonoUNuevoRegistro = new javax.swing.JTextField();
+        txt_ClienteTelefono = new javax.swing.JTextField();
         lbl__DireccionUusuarios = new javax.swing.JLabel();
-        txt_CiudadUNuevoRegistro = new javax.swing.JTextField();
+        txt_ClienteDireccion = new javax.swing.JTextField();
         btnSalir = new javax.swing.JButton();
+        txt_ClienteApellidoPat = new javax.swing.JTextField();
+        lbl_Clientedni = new javax.swing.JLabel();
+        txt_ClienteDni = new javax.swing.JTextField();
+        RbtnFemenino = new javax.swing.JRadioButton();
+        RbtnMasculino = new javax.swing.JRadioButton();
+        cbox_Empleado = new javax.swing.JComboBox<>();
+        cbox_TipoMoneda = new javax.swing.JComboBox<>();
+        Cbox_Sucursal = new javax.swing.JComboBox<>();
+        cbox_Anio = new javax.swing.JComboBox<>();
+        Cbox_Mes = new javax.swing.JComboBox<>();
+        cbox_Dia = new javax.swing.JComboBox<>();
+        lbl_AutoApellidos = new javax.swing.JLabel();
+        lbl_AutoNombre = new javax.swing.JLabel();
+        lbl_CompleteContraseña = new javax.swing.JLabel();
+        lbl_Avatar = new javax.swing.JLabel();
         jfndo = new javax.swing.JLabel();
 
         fondo.setFont(new java.awt.Font("Lucida Sans Unicode", 0, 12)); // NOI18N
@@ -67,44 +105,49 @@ public class frmregistrodelCliente01 extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setExtendedState(2);
-        setMinimumSize(new java.awt.Dimension(800, 550));
+        setMinimumSize(new java.awt.Dimension(1100, 550));
         setName("framdeInicio"); // NOI18N
         setUndecorated(true);
         getContentPane().setLayout(null);
 
-        lbl_usuarioUser.setFont(new java.awt.Font("Lucida Sans Unicode", 0, 12)); // NOI18N
-        lbl_usuarioUser.setText("Usuario:");
-        getContentPane().add(lbl_usuarioUser);
-        lbl_usuarioUser.setBounds(270, 120, 47, 20);
+        lbl_Ciudad.setFont(new java.awt.Font("Lucida Sans Unicode", 0, 12)); // NOI18N
+        lbl_Ciudad.setText("Ciudad");
+        getContentPane().add(lbl_Ciudad);
+        lbl_Ciudad.setBounds(430, 310, 41, 20);
 
         jLabel3.setFont(new java.awt.Font("Lucida Sans Unicode", 0, 12)); // NOI18N
         jLabel3.setText("Contraseña:");
         getContentPane().add(jLabel3);
-        jLabel3.setBounds(270, 320, 69, 20);
+        jLabel3.setBounds(80, 320, 69, 20);
 
-        txt_ContraseñaNurvoReg.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        txt_ContraseñaNurvoReg.setBorder(null);
-        txt_ContraseñaNurvoReg.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        txt_ContraseñaNurvoReg.setOpaque(false);
-        txt_ContraseñaNurvoReg.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txt_ContraseñaNurvoRegActionPerformed(evt);
+        txt_CuentaContraseña.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        txt_CuentaContraseña.setBorder(null);
+        txt_CuentaContraseña.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        txt_CuentaContraseña.setOpaque(false);
+        txt_CuentaContraseña.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                txt_CuentaContraseñaMouseClicked(evt);
             }
         });
-        getContentPane().add(txt_ContraseñaNurvoReg);
-        txt_ContraseñaNurvoReg.setBounds(270, 340, 250, 30);
-
-        txt_UsuarioNuevoRegistro.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        txt_UsuarioNuevoRegistro.setBorder(null);
-        txt_UsuarioNuevoRegistro.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        txt_UsuarioNuevoRegistro.setOpaque(false);
-        txt_UsuarioNuevoRegistro.addActionListener(new java.awt.event.ActionListener() {
+        txt_CuentaContraseña.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txt_UsuarioNuevoRegistroActionPerformed(evt);
+                txt_CuentaContraseñaActionPerformed(evt);
             }
         });
-        getContentPane().add(txt_UsuarioNuevoRegistro);
-        txt_UsuarioNuevoRegistro.setBounds(270, 140, 250, 30);
+        getContentPane().add(txt_CuentaContraseña);
+        txt_CuentaContraseña.setBounds(80, 340, 250, 30);
+
+        txt_ClienteCiudad.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        txt_ClienteCiudad.setBorder(null);
+        txt_ClienteCiudad.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        txt_ClienteCiudad.setOpaque(false);
+        txt_ClienteCiudad.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txt_ClienteCiudadActionPerformed(evt);
+            }
+        });
+        getContentPane().add(txt_ClienteCiudad);
+        txt_ClienteCiudad.setBounds(430, 330, 120, 30);
 
         btnActualizar.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
         btnActualizar.setForeground(new java.awt.Color(255, 255, 255));
@@ -126,109 +169,124 @@ public class frmregistrodelCliente01 extends javax.swing.JFrame {
             }
         });
         getContentPane().add(btnActualizar);
-        btnActualizar.setBounds(270, 430, 255, 28);
+        btnActualizar.setBounds(430, 400, 255, 28);
 
         jLabel4.setFont(new java.awt.Font("Lucida Sans Unicode", 0, 12)); // NOI18N
         jLabel4.setText("Confirmar contraseña:");
         getContentPane().add(jLabel4);
-        jLabel4.setBounds(270, 370, 128, 20);
+        jLabel4.setBounds(80, 370, 128, 20);
 
-        txt_ContraseñaNConfReg.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        txt_ContraseñaNConfReg.setBorder(null);
-        txt_ContraseñaNConfReg.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        txt_ContraseñaNConfReg.setOpaque(false);
-        txt_ContraseñaNConfReg.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txt_ContraseñaNConfRegActionPerformed(evt);
+        txt_CuentaContraseñaConfirmar.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        txt_CuentaContraseñaConfirmar.setBorder(null);
+        txt_CuentaContraseñaConfirmar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        txt_CuentaContraseñaConfirmar.setOpaque(false);
+        txt_CuentaContraseñaConfirmar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                txt_CuentaContraseñaConfirmarMouseClicked(evt);
             }
         });
-        getContentPane().add(txt_ContraseñaNConfReg);
-        txt_ContraseñaNConfReg.setBounds(270, 390, 250, 30);
+        txt_CuentaContraseñaConfirmar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txt_CuentaContraseñaConfirmarActionPerformed(evt);
+            }
+        });
+        getContentPane().add(txt_CuentaContraseñaConfirmar);
+        txt_CuentaContraseñaConfirmar.setBounds(80, 390, 250, 30);
 
         lbl_nombre_usuario.setFont(new java.awt.Font("Lucida Sans Unicode", 0, 12)); // NOI18N
-        lbl_nombre_usuario.setText("Nombre:");
+        lbl_nombre_usuario.setText("Nombres:");
         getContentPane().add(lbl_nombre_usuario);
-        lbl_nombre_usuario.setBounds(270, 170, 70, 20);
+        lbl_nombre_usuario.setBounds(430, 110, 70, 20);
 
-        txt_NomreUNuevoRegistro.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        txt_NomreUNuevoRegistro.setBorder(null);
-        txt_NomreUNuevoRegistro.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        txt_NomreUNuevoRegistro.setOpaque(false);
-        txt_NomreUNuevoRegistro.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txt_NomreUNuevoRegistroActionPerformed(evt);
+        txt_ClienteNombre.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        txt_ClienteNombre.setBorder(null);
+        txt_ClienteNombre.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        txt_ClienteNombre.setOpaque(false);
+        txt_ClienteNombre.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                txt_ClienteNombreMouseClicked(evt);
             }
         });
-        getContentPane().add(txt_NomreUNuevoRegistro);
-        txt_NomreUNuevoRegistro.setBounds(270, 190, 120, 30);
+        txt_ClienteNombre.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txt_ClienteNombreActionPerformed(evt);
+            }
+        });
+        getContentPane().add(txt_ClienteNombre);
+        txt_ClienteNombre.setBounds(430, 130, 250, 30);
 
         lb_lApelldos_usuarios.setFont(new java.awt.Font("Lucida Sans Unicode", 0, 12)); // NOI18N
         lb_lApelldos_usuarios.setText("Apellidos:");
         getContentPane().add(lb_lApelldos_usuarios);
-        lb_lApelldos_usuarios.setBounds(400, 170, 70, 20);
+        lb_lApelldos_usuarios.setBounds(430, 160, 70, 20);
 
-        txt_ApellidoUNuevoRegistro.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        txt_ApellidoUNuevoRegistro.setBorder(null);
-        txt_ApellidoUNuevoRegistro.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        txt_ApellidoUNuevoRegistro.setOpaque(false);
-        txt_ApellidoUNuevoRegistro.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txt_ApellidoUNuevoRegistroActionPerformed(evt);
+        txt_ClienteApellidoMat.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        txt_ClienteApellidoMat.setBorder(null);
+        txt_ClienteApellidoMat.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        txt_ClienteApellidoMat.setOpaque(false);
+        txt_ClienteApellidoMat.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                txt_ClienteApellidoMatMouseClicked(evt);
             }
         });
-        getContentPane().add(txt_ApellidoUNuevoRegistro);
-        txt_ApellidoUNuevoRegistro.setBounds(400, 190, 120, 30);
+        txt_ClienteApellidoMat.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txt_ClienteApellidoMatActionPerformed(evt);
+            }
+        });
+        getContentPane().add(txt_ClienteApellidoMat);
+        txt_ClienteApellidoMat.setBounds(560, 180, 120, 30);
 
         lbl_usuarioUser1.setFont(new java.awt.Font("Lucida Sans Unicode", 0, 12)); // NOI18N
         lbl_usuarioUser1.setText("Correo:");
         getContentPane().add(lbl_usuarioUser1);
-        lbl_usuarioUser1.setBounds(270, 220, 43, 20);
+        lbl_usuarioUser1.setBounds(430, 260, 43, 20);
 
-        txt_CorreoUNuevoRegistro.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        txt_CorreoUNuevoRegistro.setBorder(null);
-        txt_CorreoUNuevoRegistro.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        txt_CorreoUNuevoRegistro.setOpaque(false);
-        txt_CorreoUNuevoRegistro.addActionListener(new java.awt.event.ActionListener() {
+        txt_ClienteCorreo.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        txt_ClienteCorreo.setBorder(null);
+        txt_ClienteCorreo.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        txt_ClienteCorreo.setOpaque(false);
+        txt_ClienteCorreo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txt_CorreoUNuevoRegistroActionPerformed(evt);
+                txt_ClienteCorreoActionPerformed(evt);
             }
         });
-        getContentPane().add(txt_CorreoUNuevoRegistro);
-        txt_CorreoUNuevoRegistro.setBounds(270, 240, 250, 30);
+        getContentPane().add(txt_ClienteCorreo);
+        txt_ClienteCorreo.setBounds(430, 280, 250, 30);
 
         lbl_nombre_usuario1.setFont(new java.awt.Font("Lucida Sans Unicode", 0, 12)); // NOI18N
         lbl_nombre_usuario1.setText("Telefono:");
         getContentPane().add(lbl_nombre_usuario1);
-        lbl_nombre_usuario1.setBounds(270, 270, 70, 20);
+        lbl_nombre_usuario1.setBounds(560, 210, 70, 20);
 
-        txt_TelefonoUNuevoRegistro.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        txt_TelefonoUNuevoRegistro.setBorder(null);
-        txt_TelefonoUNuevoRegistro.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        txt_TelefonoUNuevoRegistro.setOpaque(false);
-        txt_TelefonoUNuevoRegistro.addActionListener(new java.awt.event.ActionListener() {
+        txt_ClienteTelefono.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        txt_ClienteTelefono.setBorder(null);
+        txt_ClienteTelefono.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        txt_ClienteTelefono.setOpaque(false);
+        txt_ClienteTelefono.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txt_TelefonoUNuevoRegistroActionPerformed(evt);
+                txt_ClienteTelefonoActionPerformed(evt);
             }
         });
-        getContentPane().add(txt_TelefonoUNuevoRegistro);
-        txt_TelefonoUNuevoRegistro.setBounds(270, 290, 120, 30);
+        getContentPane().add(txt_ClienteTelefono);
+        txt_ClienteTelefono.setBounds(560, 230, 120, 30);
 
         lbl__DireccionUusuarios.setFont(new java.awt.Font("Lucida Sans Unicode", 0, 12)); // NOI18N
         lbl__DireccionUusuarios.setText("Direccion:");
         getContentPane().add(lbl__DireccionUusuarios);
-        lbl__DireccionUusuarios.setBounds(400, 270, 70, 20);
+        lbl__DireccionUusuarios.setBounds(560, 310, 70, 20);
 
-        txt_CiudadUNuevoRegistro.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        txt_CiudadUNuevoRegistro.setBorder(null);
-        txt_CiudadUNuevoRegistro.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        txt_CiudadUNuevoRegistro.setOpaque(false);
-        txt_CiudadUNuevoRegistro.addActionListener(new java.awt.event.ActionListener() {
+        txt_ClienteDireccion.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        txt_ClienteDireccion.setBorder(null);
+        txt_ClienteDireccion.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        txt_ClienteDireccion.setOpaque(false);
+        txt_ClienteDireccion.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txt_CiudadUNuevoRegistroActionPerformed(evt);
+                txt_ClienteDireccionActionPerformed(evt);
             }
         });
-        getContentPane().add(txt_CiudadUNuevoRegistro);
-        txt_CiudadUNuevoRegistro.setBounds(400, 290, 120, 30);
+        getContentPane().add(txt_ClienteDireccion);
+        txt_ClienteDireccion.setBounds(560, 330, 120, 30);
 
         btnSalir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconos/Util/LINEAS LITE/EQUIS CIRCULO.png"))); // NOI18N
         btnSalir.setBorder(null);
@@ -241,59 +299,374 @@ public class frmregistrodelCliente01 extends javax.swing.JFrame {
             }
         });
         getContentPane().add(btnSalir);
-        btnSalir.setBounds(490, 80, 32, 32);
+        btnSalir.setBounds(660, 30, 32, 32);
 
-        jfndo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Fondos/welcomeSesion.png"))); // NOI18N
+        txt_ClienteApellidoPat.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        txt_ClienteApellidoPat.setBorder(null);
+        txt_ClienteApellidoPat.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        txt_ClienteApellidoPat.setOpaque(false);
+        txt_ClienteApellidoPat.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                txt_ClienteApellidoPatMouseClicked(evt);
+            }
+        });
+        txt_ClienteApellidoPat.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txt_ClienteApellidoPatActionPerformed(evt);
+            }
+        });
+        getContentPane().add(txt_ClienteApellidoPat);
+        txt_ClienteApellidoPat.setBounds(430, 180, 120, 30);
+
+        lbl_Clientedni.setFont(new java.awt.Font("Lucida Sans Unicode", 0, 12)); // NOI18N
+        lbl_Clientedni.setText("DNI:");
+        getContentPane().add(lbl_Clientedni);
+        lbl_Clientedni.setBounds(430, 210, 70, 20);
+
+        txt_ClienteDni.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        txt_ClienteDni.setBorder(null);
+        txt_ClienteDni.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        txt_ClienteDni.setOpaque(false);
+        txt_ClienteDni.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txt_ClienteDniActionPerformed(evt);
+            }
+        });
+        getContentPane().add(txt_ClienteDni);
+        txt_ClienteDni.setBounds(430, 230, 120, 30);
+
+        BtnGrupoSeeeeeeeeeeeexo.add(RbtnFemenino);
+        RbtnFemenino.setText("Femenino");
+        RbtnFemenino.setBorder(null);
+        RbtnFemenino.setContentAreaFilled(false);
+        RbtnFemenino.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        RbtnFemenino.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                RbtnFemeninoItemStateChanged(evt);
+            }
+        });
+        RbtnFemenino.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                RbtnFemeninoMouseClicked(evt);
+            }
+        });
+        getContentPane().add(RbtnFemenino);
+        RbtnFemenino.setBounds(560, 370, 111, 20);
+
+        BtnGrupoSeeeeeeeeeeeexo.add(RbtnMasculino);
+        RbtnMasculino.setText("Masculino");
+        RbtnMasculino.setBorder(null);
+        RbtnMasculino.setContentAreaFilled(false);
+        RbtnMasculino.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        RbtnMasculino.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                RbtnMasculinoItemStateChanged(evt);
+            }
+        });
+        RbtnMasculino.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                RbtnMasculinoMouseClicked(evt);
+            }
+        });
+        getContentPane().add(RbtnMasculino);
+        RbtnMasculino.setBounds(430, 370, 82, 20);
+
+        cbox_Empleado.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Romero', 'Castillo', 'Carlos Alberto", "Castro', 'Vargas', 'Lidia", "Reyes', 'Ortiz', 'Claudia", "Ramos', 'Garibay', 'Angelica", "Ruiz', 'Zabaleta', 'Claudia", "Cruz', 'Tarazona', 'Ricardo", "Diaz', 'Flores', 'Edith", "Sarmiento', 'Bellido', 'Claudia Rocio", "Pachas', 'Sifuentes', 'Luis Alberto", "Tello', 'Alarcon', 'Hugo Valentin", "Carrasco', 'Vargas', 'Pedro Hugo'" }));
+        cbox_Empleado.setBorder(null);
+        cbox_Empleado.setName("ItemSucursales"); // NOI18N
+        cbox_Empleado.setOpaque(false);
+        cbox_Empleado.setRequestFocusEnabled(false);
+        getContentPane().add(cbox_Empleado);
+        cbox_Empleado.setBounds(80, 180, 250, 26);
+
+        cbox_TipoMoneda.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Soles", "Dolares" }));
+        cbox_TipoMoneda.setBorder(null);
+        cbox_TipoMoneda.setName("ItemSucursales"); // NOI18N
+        getContentPane().add(cbox_TipoMoneda);
+        cbox_TipoMoneda.setBounds(80, 230, 250, 26);
+
+        Cbox_Sucursal.setBorder(null);
+        Cbox_Sucursal.setName("ItemSucursales"); // NOI18N
+        Cbox_Sucursal.setOpaque(false);
+        getContentPane().add(Cbox_Sucursal);
+        Cbox_Sucursal.setBounds(80, 130, 250, 26);
+
+        cbox_Anio.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Año", "2019", "2018", "2017", "2016", "2015", "2014", "2013", "2012", "2011", "2010", "2009", "2008", "2007", "2006", "2005", "2004", "2003", "2002", "2001", "2000", "1999", "1998", "1997", "1996", "1995", "1994", "1993", "1992", "1991", "1990", "1989", "1988", "1987", "1986", "1985", "1984", "1983", "1982", "1981", "1980", "1979", "1978", "1977", "1976", "1975", "1974", "1973", "1972", "1971", "1970", "1969", "1968", "1967", "1966", "1965" }));
+        getContentPane().add(cbox_Anio);
+        cbox_Anio.setBounds(250, 280, 80, 26);
+
+        Cbox_Mes.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Cbox_MesMouseClicked(evt);
+            }
+        });
+        getContentPane().add(Cbox_Mes);
+        Cbox_Mes.setBounds(160, 280, 80, 26);
+
+        cbox_Dia.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Día" }));
+        getContentPane().add(cbox_Dia);
+        cbox_Dia.setBounds(80, 280, 70, 26);
+
+        lbl_AutoApellidos.setText(" ");
+        getContentPane().add(lbl_AutoApellidos);
+        lbl_AutoApellidos.setBounds(780, 290, 160, 16);
+
+        lbl_AutoNombre.setText(" ");
+        getContentPane().add(lbl_AutoNombre);
+        lbl_AutoNombre.setBounds(780, 270, 160, 16);
+
+        lbl_CompleteContraseña.setText(" ");
+        getContentPane().add(lbl_CompleteContraseña);
+        lbl_CompleteContraseña.setBounds(80, 420, 250, 16);
+        getContentPane().add(lbl_Avatar);
+        lbl_Avatar.setBounds(820, 90, 160, 170);
+
+        jfndo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Fondos/1100550.png"))); // NOI18N
         jfndo.setText("r");
         getContentPane().add(jfndo);
-        jfndo.setBounds(0, 0, 800, 550);
+        jfndo.setBounds(0, 0, 1100, 550);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+private void llenarItenSucursales() {
+//Iten_Sucursal
+        Cbox_Sucursal.addItem("Sipan");
+        Cbox_Sucursal.addItem("Chan Chan");
+        Cbox_Sucursal.addItem("Los Olivos");
+        Cbox_Sucursal.addItem("Pardo");
+        Cbox_Sucursal.addItem("Misti");
+        Cbox_Sucursal.addItem("Machupicchu");
+        Cbox_Sucursal.addItem("Grau");
+       
+        Cbox_Mes.addItem("Enero");Cbox_Mes.addItem("Febrero");Cbox_Mes.addItem("Marzo");
+        Cbox_Mes.addItem("Abril");Cbox_Mes.addItem("Mayo");Cbox_Mes.addItem("Junio");
+        Cbox_Mes.addItem("Julio");Cbox_Mes.addItem("Agosto");Cbox_Mes.addItem("Septimbre");
+        Cbox_Mes.addItem("Octubre");Cbox_Mes.addItem("Noviembre");Cbox_Mes.addItem(" Diciembre");
 
-    private void txt_ContraseñaNurvoRegActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt_ContraseñaNurvoRegActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txt_ContraseñaNurvoRegActionPerformed
+        
+        String mes=Cbox_Mes.getSelectedItem().toString(); 
+        System.out.println(messeleccionado);
+        if (mes.equalsIgnoreCase("Febrero")) {
+//            for (int i = 0; i < 28; i++) {
+//                
+//                if (i<=9) {
+//                String cadena= "0"+Integer.toString(i);    
+//                }else{
+//                String cadena= Integer.toString(i);
+//                }
+//            cbox_Dia.addItem(cha);     //System.out.println(i); 
+            
+        cbox_Dia.addItem("01");cbox_Dia.addItem("02"); cbox_Dia.addItem("03");
+        cbox_Dia.addItem("04");cbox_Dia.addItem("05"); cbox_Dia.addItem("06");  
+        cbox_Dia.addItem("07");cbox_Dia.addItem("08"); cbox_Dia.addItem("09");  
+        cbox_Dia.addItem("10");cbox_Dia.addItem("11"); cbox_Dia.addItem("12");  
+        cbox_Dia.addItem("13");cbox_Dia.addItem("14"); cbox_Dia.addItem("15"); 
+        cbox_Dia.addItem("16");cbox_Dia.addItem("17"); cbox_Dia.addItem("18"); 
+        cbox_Dia.addItem("19");cbox_Dia.addItem("20"); cbox_Dia.addItem("21"); 
+        cbox_Dia.addItem("22");cbox_Dia.addItem("23"); cbox_Dia.addItem("24"); 
+        cbox_Dia.addItem("25");cbox_Dia.addItem("26"); cbox_Dia.addItem("27");
+        cbox_Dia.addItem("28"); 
+        
+        
+    }else{
+     cbox_Dia.addItem("01");cbox_Dia.addItem("02"); cbox_Dia.addItem("03");
+        cbox_Dia.addItem("04");cbox_Dia.addItem("05"); cbox_Dia.addItem("06");  
+        cbox_Dia.addItem("07");cbox_Dia.addItem("08"); cbox_Dia.addItem("09");  
+        cbox_Dia.addItem("10");cbox_Dia.addItem("11"); cbox_Dia.addItem("12");  
+        cbox_Dia.addItem("13");cbox_Dia.addItem("14"); cbox_Dia.addItem("15"); 
+        cbox_Dia.addItem("16");cbox_Dia.addItem("17"); cbox_Dia.addItem("18"); 
+        cbox_Dia.addItem("19");cbox_Dia.addItem("20"); cbox_Dia.addItem("21"); 
+        cbox_Dia.addItem("22");cbox_Dia.addItem("23"); cbox_Dia.addItem("24"); 
+        cbox_Dia.addItem("25");cbox_Dia.addItem("26"); cbox_Dia.addItem("27");
+        cbox_Dia.addItem("28");cbox_Dia.addItem("29"); cbox_Dia.addItem("30"); 
+        cbox_Dia.addItem("31");   
+    }
 
-    private void txt_UsuarioNuevoRegistroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt_UsuarioNuevoRegistroActionPerformed
+        
+
+
+
+
+}
+
+    private void llenarAutomatico() {
+
+        if (txt_ClienteNombre.getText().isEmpty()) {
+            lbl_AutoNombre.setText(" ");
+        } else {
+            lbl_AutoNombre.setText(txt_ClienteNombre.getText());
+        }
+
+        if (txt_ClienteApellidoPat.getText().isEmpty() || txt_ClienteApellidoMat.getText().isEmpty()) {
+            lbl_AutoApellidos.setText(" ");
+        } else {
+            lbl_AutoApellidos.setText(txt_ClienteApellidoPat.getText() + "  " + txt_ClienteApellidoMat.getText());
+        }
+        
+    }
+//if (txt_CuentaContraseña.getText().equals(txt_CuentaContraseñaConfirmar.getText()){
+    //}
+
+    private void verificarContraseña() {
+        String Copia = txt_CuentaContraseñaConfirmar.getText();
+        if (txt_CuentaContraseña.getText().isEmpty()) {
+            lbl_CompleteContraseña.setText("Ingrese su contraseña");
+        }
+        if (!txt_CuentaContraseña.getText().isEmpty() && txt_CuentaContraseñaConfirmar.getText().isEmpty()) {
+            lbl_CompleteContraseña.setText("Vereifique su contraseña");
+        }
+        if (!txt_CuentaContraseña.getText().isEmpty() && !txt_CuentaContraseñaConfirmar.getText().isEmpty()) {
+            if (txt_CuentaContraseña.getText().equals(Copia)) {
+                lbl_CompleteContraseña.setText("Las contraseñas coinciden");
+            } else {
+                lbl_CompleteContraseña.setText("Las contraseñas no coinciden");
+            }
+        }
+
+    }
+    private void txt_CuentaContraseñaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt_CuentaContraseñaActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_txt_UsuarioNuevoRegistroActionPerformed
+    }//GEN-LAST:event_txt_CuentaContraseñaActionPerformed
+
+    private void txt_ClienteCiudadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt_ClienteCiudadActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txt_ClienteCiudadActionPerformed
 
     private void btnActualizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnActualizarActionPerformed
 
     }//GEN-LAST:event_btnActualizarActionPerformed
 
-    private void txt_ContraseñaNConfRegActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt_ContraseñaNConfRegActionPerformed
+    private void txt_CuentaContraseñaConfirmarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt_CuentaContraseñaConfirmarActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_txt_ContraseñaNConfRegActionPerformed
+    }//GEN-LAST:event_txt_CuentaContraseñaConfirmarActionPerformed
 
-    private void txt_NomreUNuevoRegistroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt_NomreUNuevoRegistroActionPerformed
+    private void txt_ClienteNombreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt_ClienteNombreActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_txt_NomreUNuevoRegistroActionPerformed
+    }//GEN-LAST:event_txt_ClienteNombreActionPerformed
 
-    private void txt_ApellidoUNuevoRegistroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt_ApellidoUNuevoRegistroActionPerformed
+    private void txt_ClienteApellidoMatActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt_ClienteApellidoMatActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_txt_ApellidoUNuevoRegistroActionPerformed
+    }//GEN-LAST:event_txt_ClienteApellidoMatActionPerformed
 
-    private void txt_CorreoUNuevoRegistroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt_CorreoUNuevoRegistroActionPerformed
+    private void txt_ClienteCorreoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt_ClienteCorreoActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_txt_CorreoUNuevoRegistroActionPerformed
+    }//GEN-LAST:event_txt_ClienteCorreoActionPerformed
 
-    private void txt_TelefonoUNuevoRegistroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt_TelefonoUNuevoRegistroActionPerformed
+    private void txt_ClienteTelefonoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt_ClienteTelefonoActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_txt_TelefonoUNuevoRegistroActionPerformed
+    }//GEN-LAST:event_txt_ClienteTelefonoActionPerformed
 
-    private void txt_CiudadUNuevoRegistroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt_CiudadUNuevoRegistroActionPerformed
+    private void txt_ClienteDireccionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt_ClienteDireccionActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_txt_CiudadUNuevoRegistroActionPerformed
+    }//GEN-LAST:event_txt_ClienteDireccionActionPerformed
 
     private void btnSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalirActionPerformed
         //Cerrar
         int dialog = JOptionPane.YES_NO_OPTION;
-        int resultado= JOptionPane.showConfirmDialog(this, "¿Desea salir?","Salir",dialog);
-        if (resultado==0)
-        System.exit(0);
+        int resultado = JOptionPane.showConfirmDialog(this, "¿Desea salir?", "Salir", dialog);
+        if (resultado == 0) {
+            System.exit(0);
+        }
     }//GEN-LAST:event_btnSalirActionPerformed
+
+    private void txt_ClienteApellidoPatActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt_ClienteApellidoPatActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txt_ClienteApellidoPatActionPerformed
+
+    private void txt_ClienteDniActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt_ClienteDniActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txt_ClienteDniActionPerformed
+
+    private void txt_CuentaContraseñaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txt_CuentaContraseñaMouseClicked
+        // TODO add your handling code here:
+        verificarContraseña();
+    }//GEN-LAST:event_txt_CuentaContraseñaMouseClicked
+
+    private void txt_CuentaContraseñaConfirmarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txt_CuentaContraseñaConfirmarMouseClicked
+        // TODO add your handling code here:
+        verificarContraseña();
+    }//GEN-LAST:event_txt_CuentaContraseñaConfirmarMouseClicked
+
+    private void txt_ClienteNombreMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txt_ClienteNombreMouseClicked
+        llenarAutomatico();
+        // click en nombre
+    }//GEN-LAST:event_txt_ClienteNombreMouseClicked
+
+    private void txt_ClienteApellidoMatMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txt_ClienteApellidoMatMouseClicked
+        // click en el segundo apellido
+        llenarAutomatico();
+
+    }//GEN-LAST:event_txt_ClienteApellidoMatMouseClicked
+
+    private void txt_ClienteApellidoPatMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txt_ClienteApellidoPatMouseClicked
+        // click en el primer apellido
+        llenarAutomatico();
+
+    }//GEN-LAST:event_txt_ClienteApellidoPatMouseClicked
+
+    private void RbtnMasculinoItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_RbtnMasculinoItemStateChanged
+        //inutil
+    }//GEN-LAST:event_RbtnMasculinoItemStateChanged
+
+    private void RbtnFemeninoItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_RbtnFemeninoItemStateChanged
+        //inutil
+    }//GEN-LAST:event_RbtnFemeninoItemStateChanged
+
+    private void RbtnMasculinoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_RbtnMasculinoMouseClicked
+
+        System.out.println("que pasa al pulsar  " + pul2);
+        if (RbtnMasculino.isSelected()) {
+
+            if (pul2 == 1) {
+                url = this.getClass().getResource("/avatar/NegroForma.png");
+
+            }
+            if (pul2 == 2) {
+                url = this.getClass().getResource("/avatar/NegroInformaCool.png");
+            }
+            if (pul2 == 3) {
+                url = this.getClass().getResource("/avatar/browCamisa.png");
+            }
+            if (pul2 == 4) {
+                url = this.getClass().getResource("/avatar/blabar.png");
+                pul2 = 0;
+            }
+            pul2 = pul2 + 1;
+            ImageIcon icon = new ImageIcon(url);
+            lbl_Avatar.setIcon(icon);
+        }
+    }//GEN-LAST:event_RbtnMasculinoMouseClicked
+
+    private void RbtnFemeninoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_RbtnFemeninoMouseClicked
+        // click en mujer
+
+        if (RbtnFemenino.isSelected()) {
+
+            if (pul == 1) {
+                url = this.getClass().getResource("/avatar/CastaRosa.png");
+            }
+            if (pul == 2) {
+                url = this.getClass().getResource("/avatar/Rubi Blusa.png");
+            }
+            if (pul == 3) {
+                url = this.getClass().getResource("/avatar/CastaUniforme.png");
+            }
+            if (pul == 4) {
+                url = this.getClass().getResource("/avatar/rubiCorbata.png");
+                pul = 0;
+            }
+
+            pul = pul + 1;
+            ImageIcon icon = new ImageIcon(url);
+            lbl_Avatar.setIcon(icon);
+        }
+    }//GEN-LAST:event_RbtnFemeninoMouseClicked
+
+    private void Cbox_MesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Cbox_MesMouseClicked
+
+        // TODO add your handling code here:aqui
+        String messeleccionado=Cbox_Mes.getSelectedItem().toString(); 
+    }//GEN-LAST:event_Cbox_MesMouseClicked
 
     /**
      * @param args the command line arguments
@@ -346,25 +719,41 @@ public class frmregistrodelCliente01 extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.ButtonGroup BtnGrupoSeeeeeeeeeeeexo;
+    private javax.swing.JComboBox<String> Cbox_Mes;
+    private javax.swing.JComboBox<String> Cbox_Sucursal;
+    private javax.swing.JRadioButton RbtnFemenino;
+    private javax.swing.JRadioButton RbtnMasculino;
     private javax.swing.JButton btnActualizar;
     private javax.swing.JButton btnSalir;
+    private javax.swing.JComboBox<String> cbox_Anio;
+    private javax.swing.JComboBox<String> cbox_Dia;
+    private javax.swing.JComboBox<String> cbox_Empleado;
+    private javax.swing.JComboBox<String> cbox_TipoMoneda;
     private javax.swing.JLabel fondo;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jfndo;
     private javax.swing.JLabel lb_lApelldos_usuarios;
+    private javax.swing.JLabel lbl_AutoApellidos;
+    private javax.swing.JLabel lbl_AutoNombre;
+    private javax.swing.JLabel lbl_Avatar;
+    private javax.swing.JLabel lbl_Ciudad;
+    private javax.swing.JLabel lbl_Clientedni;
+    private javax.swing.JLabel lbl_CompleteContraseña;
     private javax.swing.JLabel lbl__DireccionUusuarios;
     private javax.swing.JLabel lbl_nombre_usuario;
     private javax.swing.JLabel lbl_nombre_usuario1;
-    private javax.swing.JLabel lbl_usuarioUser;
     private javax.swing.JLabel lbl_usuarioUser1;
-    private javax.swing.JTextField txt_ApellidoUNuevoRegistro;
-    private javax.swing.JTextField txt_CiudadUNuevoRegistro;
-    private javax.swing.JTextField txt_ContraseñaNConfReg;
-    private javax.swing.JTextField txt_ContraseñaNurvoReg;
-    private javax.swing.JTextField txt_CorreoUNuevoRegistro;
-    private javax.swing.JTextField txt_NomreUNuevoRegistro;
-    private javax.swing.JTextField txt_TelefonoUNuevoRegistro;
-    private javax.swing.JTextField txt_UsuarioNuevoRegistro;
+    private javax.swing.JTextField txt_ClienteApellidoMat;
+    private javax.swing.JTextField txt_ClienteApellidoPat;
+    private javax.swing.JTextField txt_ClienteCiudad;
+    private javax.swing.JTextField txt_ClienteCorreo;
+    private javax.swing.JTextField txt_ClienteDireccion;
+    private javax.swing.JTextField txt_ClienteDni;
+    private javax.swing.JTextField txt_ClienteNombre;
+    private javax.swing.JTextField txt_ClienteTelefono;
+    private javax.swing.JTextField txt_CuentaContraseña;
+    private javax.swing.JTextField txt_CuentaContraseñaConfirmar;
     // End of variables declaration//GEN-END:variables
 }
